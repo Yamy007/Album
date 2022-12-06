@@ -10,7 +10,7 @@ def users(request):
 
 def index(request: object):
     if request.user.is_authenticated:
-        article = Article.object.filter(owner = request.user)
+        article = Article.objects.all()
         return render(request, "main/index.html", {"article": article})
         
     else:

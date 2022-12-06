@@ -3,5 +3,6 @@ from django.urls import path
 
 
 urlpatterns = [
-    path('accounts/profile/', users, name = 'redirect')
+    path('accounts/profile/', users, name = 'redirect'),
+    path('', index, name = "index")
 ]
