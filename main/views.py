@@ -14,4 +14,4 @@ def index(request: object):
         return render(request, "main/index.html", {"article": article})
         
     else:
-        redirect('/users/login')
+        return redirect('/users/login')    
