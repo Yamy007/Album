@@ -24,8 +24,8 @@ class Customer(models.Model):
     status = models.ForeignKey(Status, on_delete = models.CASCADE)
     def __str__(self):
         return self.nickname
-    
-    
+
+
 class Article(models.Model):
     owner = models.ForeignKey(Customer, on_delete = models.CASCADE)
     title = models.CharField(max_length=255, blank=True, null=True)
@@ -35,7 +35,6 @@ class Article(models.Model):
     def __str__(self):
         return self.title
     
-
 class Date(models.Model):
     boy = models.CharField(max_length=255)  #Customer
     girl = models.CharField(max_length=255) #Customer
