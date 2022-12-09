@@ -9,15 +9,17 @@ def users(request: object):
 
 
 def customer(request: object):
-    if request.methods == "POST":
+    if request.method == "POST":
+        sex = Sex.objects.get(title = request.POST.get("sex"))
+        status = Status.objects.get(title = request.POST.get("status"))
         customer = Customer()
         customer.user = request.user
         customer.age = request.POST.get("age")
-        customer.sex = request.POST.get("sex")
+        customer.sex = sex
         customer.part = request.POST.get("part")
         customer.born = request.POST.get("born")
         customer.nickname = request.POST.get("nickname")
-        customer.status = request.POST.get("status")
+        customer.status = status
         customer.save()
         return redirect("/")
     else:
