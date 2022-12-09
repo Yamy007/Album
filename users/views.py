@@ -2,7 +2,7 @@ from .forms import UserRegistrationForm
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
-
+    
 
 
 
@@ -20,7 +20,6 @@ def register(request):
             user = form.save(commit=False)
             user.is_active = False
             user.save()
-            activateEmail(request, user, form.cleaned_data.get('email'))
             return redirect('/')
 
     context = {'form': form}

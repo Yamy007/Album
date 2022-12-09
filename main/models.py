@@ -27,7 +27,7 @@ class Customer(models.Model):
 
 
 class Article(models.Model):
-    owner = models.ForeignKey(Customer, on_delete = models.CASCADE)
+    owner = models.ForeignKey(User, on_delete = models.CASCADE)
     title = models.CharField(max_length=255, blank=True, null=True)
     image = models.ImageField(upload_to = 'images/')
     description = models.TextField(blank=True, null=True)
