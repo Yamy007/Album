@@ -1,43 +1,42 @@
-{% extends "registration/loyalout.html"%}
+{% extends "registration/loyalout.html"%} {%block content%}
 
-{%block content%}
+<div style = "background-color: red; height:100vh; width:100vw; position:absolute;">
 
-    <div class="grid">
-      <form method="post" class="form login" action="{% url 'users:login' %}" >{% csrf_token %}
-        <div class="w-50 container">
-          <div class="form-group">
-            <label for="login__username">Email address</label>
-            <input
-              type="text"
-              name = "username"
-              class="form-control"
-              id="login__username"
-              aria-describedby="textHelp"
-              placeholder="Enter text"
-            />
-            <small id="emailHelp" class="form-text text-muted"
-              >We'll never share your email with anyone else.</small
-            >
-          </div>
-          <div class="form-group">
-            <label for="login__password">Password</label>
-            <input
-              type="password"
-              name="password"
-              id="login__password"
-              class="form-control"
-              aria-describedby="passwordHelpInline"
-            />
-            <small id="passwordHelpInline" class="text-muted">
-              Must be 8-20 characters long.
-            </small>
-          </div>
+  <form method="post" class="form login mt-5"   action="{% url 'users:login' %}">
+    
+    {% csrf_token %}
+    <div class="w-50 container">
+      <div class="form-group">
+        <label for="login__username">Email address</label>
+        <input
+          type="text"
+          name="username"
+          class="form-control"
+          id="login__username"
+          aria-describedby="textHelp"
+          placeholder="Enter text"
+        />
+        <small id="emailHelp" class="form-text text-muted"
+          >We'll never share your email with anyone else.</small
+        >
+      </div>
+      <div class="form-group">
+        <label for="login__password">Password</label>
+        <input
+          type="password"
+          name="password"
+          id="login__password"
+          class="form-control"
+          aria-describedby="passwordHelpInline"
+        />
+        <small id="passwordHelpInline" class="text-muted">
+          Must be 8-20 characters long.
+        </small>
+      </div>
 
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-   
-      </form>
+      <button type="button" class="btn btn-primary">Login</button>
     </div>
+  </form>
+</div>
+
 {% endblock%}
-    
-    
