@@ -10,28 +10,7 @@
     <title>Document</title>
   </head>
   <body>
-    <!-- create login and register page -->
-    <form action="/login" method="post">
-      {%csrf_token%}
-      <div class="container d-flex justify-content-center box mt-5">
-        <div class="row align-items-start mt-4 w-50">
-          <input
-            class="form-control"
-            type="text"
-            name="username"
-            placeholder="enter your username"
-            required
-          />
-          <input
-            class="form-control mt-3"
-            type="password"
-            name="password"
-            placeholder="enter your password"
-            required
-          />
-          <button type="submit" class="btn btn-primary mt-3 text-center mb-3">Login</button>
-        </div>
-      </div>
+
     <form action="/customer" method="post">
       {%csrf_token%}
       <div class="container d-flex justify-content-center box mt-5">
